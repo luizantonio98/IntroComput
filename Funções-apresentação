@@ -12,3 +12,5 @@ def novoitem():
   Função que cria um novo item e o adiciona ao estoque.
 def recuperarchave():
   Função que possibilita o usuário a recuperação da chave de acesso e criação de uma nova.
+def ajuda():
+  Função que permite visualizar a tela de ajuda.
