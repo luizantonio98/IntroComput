@@ -1,12 +1,14 @@
+def primeiroacesso():
+  Função que possibilita a criação de uma chave de acesso e inserir os dados para recuperação da chave caso tenha perdido ou esquecido.
 def login():
   Esta função tem o objetivo de permitir ou não o acesso do usuário ao programa.
 def menu():
   Será a função que encaminhará o usuário até o menu principal.
-def visu_estoque():
+def visualizacao():
   Função que permite a visualização dos itens no estoque.
 def atualizar():
   Função que permite adicionar e/ou editar itens no estoque.
-def primeiroacesso():
-  Função que tem como objetivo criar uma chave de acesso e inserir os dados para recuperação da chave caso tenha perdido ou esquecido.
+def novoitem():
+  Função que cria um novo item e o adiciona ao estoque.
 def recuperarchave():
   Função que possibilita o usuário a recuperação da chave de acesso e criação de uma nova.
