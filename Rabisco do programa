@@ -38,6 +38,8 @@ Email:___________________ (O email será útil caso você esqueça
 Digite o código dos itens que você deseja reabastecer e a quantidade esperada após o reabastecimento.
 _________
 
+1.SALVAR             2. CANCELAR
+
 -----------------------------------------------------------
 @@2. PÓS-COMPRAS
 
@@ -84,6 +86,8 @@ Código do item:________       Quantidade a ser remmovida:______
 |Coca/Lata |   Un.   |    10      | 20/04/2018 |
 |  Arroz   |   Kg    |    5       | 18/04/2018 |
 
+1.VOLTAR
+
 -------------------------------------------------------------
 @@5. REMOVER ITEM
 
@@ -98,6 +102,8 @@ Insira o código do item que você deseja remover: ________
 @@6. AJUDA
 
 Como manusear o programa...
+
+1. VOLTAR
 
 
 
