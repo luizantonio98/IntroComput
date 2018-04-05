@@ -1,0 +1,108 @@
+Estrutura do programa
+
+------------------------------------------------------------
+  Bem-vindo ao programa Mix petiscaria  ###Tela inciial
+
+Se voce possui uma chave:____________    ENTRAR
+
+
+Se nao possuir, crie uma:          
+1.CRIAR CHAVE DE ACESSO
+
+------------------------------------------------------                       --------------------------------------------------
+CRIAÇÃO DA CHAVE DE ACESSO:                                                  Por favor, verifique e confirme se as informações estão corretas. Essas informações
+                                                                             jamais poderão ser modificadas
+                                                            
+
+Digite a nova chave de acesso:________                                        1.SALVAR               2.VOLTAR 
+Confirme: _________
+Email:___________________ (O email será útil caso você esqueça 
+                           ou perca sua chave)
+
+1.SALVAR             2. CANCELAR
+
+--------------------------------------------------------------
+                  MIX PETISCARIA
+  
+ 
+ 1.LISTA PARA COMPRAS    2.PÓS-COMPRAS     3.PÓS-VENDAS     
+ 4.(VALIDADE DOS ITENS)  5.REMOVER ITEM     
+ 
+--------------------------------------------------------------
+@@1. LISTA PARA COMPRAS
+
+|  Código  |  Descriçao | Unidade | Quantidade |  Validade  |
+|  111001  |  Coca/Lata |   Un.   |    10      | 20/04/2018 |
+|  100001  |    Arroz   |   Kg    |    5       | 18/04/2018 |
+
+Digite o código dos itens que você deseja reabastecer e a quantidade esperada após o reabastecimento.
+_________
+
+-----------------------------------------------------------
+@@2. PÓS-COMPRAS
+
+-> Adicionar um novo item
+
+Descrição: _______________
+
+Preencha as informações:
+Digite sim ou não para as perguntas
+-É fragil? ____
+-É perecível? ____  Validade: ____
+Escreva 0,1 ou 2, respectivamente para 
+Aclimatação: Natural(0), gelado(1), congelado(2) ____
+
+1.SALVAR             2. CANCELAR
+
+-> Adicionar uma nova quantidade aos itens atuais.
+
+|  Código  |  Descriçao | Unidade | Quantidade |  Validade  |
+|  111001  |  Coca/Lata |   Un.   |    10      | 20/04/2018 |
+|  100001  |    Arroz   |   Kg    |    5       | 18/04/2018 |
+
+Código do item:________       Quantidade adicional:______
+
+1.SALVAR             2. CANCELAR
+
+-------------------------------------------------------------
+@@3. PÓS-VENDAS
+
+Remover a quantidade que foi utilizada
+
+|  Código  |  Descriçao | Unidade | Quantidade |  Validade  |
+|  111001  |  Coca/Lata |   Un.   |    10      | 20/04/2018 |
+|  100001  |    Arroz   |   Kg    |    5       | 18/04/2018 |
+
+Código do item:________       Quantidade a ser remmovida:______
+
+1.SALVAR             2. CANCELAR
+
+--------------------------------------------------------------
+@@4. (VALIDADE DOS ITENS       ##itens que vencem em 15 dias
+
+|Descriçao | Unidade | Quantidade |  Validade  |
+|Coca/Lata |   Un.   |    10      | 20/04/2018 |
+|  Arroz   |   Kg    |    5       | 18/04/2018 |
+
+-------------------------------------------------------------
+@@5. REMOVER ITEM
+
+Insira o código do item que você deseja remover: ________
+|  Código  |  Descriçao |
+|  111001  |  Coca/Lata |
+|  100001  |    Arroz   |
+
+1.SALVAR             2. CANCELAR
+
+------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
