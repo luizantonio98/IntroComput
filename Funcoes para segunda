@@ -1,0 +1,90 @@
+#Função principal
+
+def main()
+    '''
+     Função que inicializa o algoritmo.
+     '''
+
+# Bancos de dados
+
+def banco_itens():
+    '''
+    Função que carrega os dados armazenados no dicionário de dicionários(Itens do estoque(códigos,descrições, etc)).
+    '''
+    return dados
+def Banco_adm():
+    '''Função que carrega os dados do gestor armazenados no dicionário de dicionários(chave,e-mail).
+    '''
+    return data
+
+#Telas
+
+def tela_inicial():
+    '''
+    Função que mostra a primeira tela do programa.
+    ''' 
+
+def login(chave):
+    '''
+    De acordo com a entrada do usuário, a função permite ou não acessar o programa. 
+    '''
+    return acesso
+
+def criar_senha():
+    '''
+    Função que cria a chave de acesso.
+    '''
+    return chave
+def recuperar_senha:
+    '''
+    Permite recuperar a chave de acesso, eviando e-mail para o usuário.
+    '''
+def menu():
+    '''
+    Função que mostra o menu principal.(Tela com as funções principais do programa).
+'''
+
+def pos_compra():
+    '''
+    Função que permite inserir novos itens e/ou atualizar a quantidade dos itens atuais do estoque.
+    '''
+    return tabela #tabela são os dados disponibilizados pela função banco_itens
+
+def pos_venda():
+    '''
+    Função que permite atualizar a quantidade dos itens atuais do estoque.
+    '''
+    return tabela #tabela são os dados disponibilizados pela função banco_itens
+def lista_de_compras():
+    '''
+Função, que permite visualizar os itens do estoque e a partir dos valores inseridos pelo usuario, faz o cálculo de quais e quantos itens precisam ser comprados.
+    '''
+    
+def remove_item():
+    '''
+    Função que permite remover um item cadastrado no estoque.
+    '''
+    
+
+#Funções auxiliares
+
+
+
+
+
+def menu():
+    print('1. Lista de compras')
+    print('2. Pos compras')
+    print('3. Pos vendas')
+    x= input('Digite a opção que vc deseja')
+    if x==1:
+        lista_de_compras()
+    elif x==2:
+        pos_vendas()
+
+ def main():
+     '''
+    Primeira função a ser executada e que inicia o as funções do programa.
+    
+    '''
+     
