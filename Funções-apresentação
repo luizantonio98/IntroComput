@@ -10,9 +10,9 @@ def menu():
   return dados
   ''' dados são as janelas inciais do programa
 def visualizacao():
-  Função que permite a visualização dos itens no estoque.
-def atualizar():
-  Função que permite adicionar e/ou editar itens no estoque.
+  
+def pos_venda():
+pos_compra():
 def novo_item():
   Função que cria um novo item e o adiciona ao estoque.
 def excluir_item():
