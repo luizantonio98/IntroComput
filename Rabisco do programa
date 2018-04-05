@@ -26,7 +26,7 @@ Email:___________________ (O email será útil caso você esqueça
   
  
  1.LISTA PARA COMPRAS    2.PÓS-COMPRAS     3.PÓS-VENDAS     
- 4.(VALIDADE DOS ITENS)  5.REMOVER ITEM     
+ 4.(VALIDADE DOS ITENS)  5.REMOVER ITEM    6. AJUDA
  
 --------------------------------------------------------------
 @@1. LISTA PARA COMPRAS
@@ -95,6 +95,9 @@ Insira o código do item que você deseja remover: ________
 1.SALVAR             2. CANCELAR
 
 ------------------------------------------------------------
+@@6. AJUDA
+
+Como manusear o programa...
 
 
 
