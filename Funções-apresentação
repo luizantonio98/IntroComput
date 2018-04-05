@@ -2,9 +2,13 @@ def primeiroacesso():
   Função que possibilita a criação de uma chave de acesso e inserir os dados para recuperação da chave caso tenha perdido ou esquecido.
 def login():
   Esta função tem o objetivo de permitir ou não o acesso do usuário ao programa.
-  return True or false
+  return True/ False
+  '''True, se a entrada do usuário for igual à senha que permite o acesso ao programa
+  '''False, se a entrada e a senha não forem iguais
 def menu():
   Será a função que encaminhará o usuário até o menu principal.
+  return dados
+  ''' dados são as janelas inciais do programa
 def visualizacao():
   Função que permite a visualização dos itens no estoque.
 def atualizar():
