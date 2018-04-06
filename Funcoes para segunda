@@ -78,10 +78,10 @@ def escolha():
     '''
     Função que mostra mensagem se realmente tem certeza que quer salvar ou cancelar a operação"
     '''
-def gera_codigos(tabela[i]):
+def gera_codigos(tabela):
     '''
-    Função que gera códigos para os itens. Estes códigos são a forma de encontrar os objetos que estão no banco de dados. Foi passado tabela[i][j], pois será acessado o arquivo tabela, para acessar o
-    dicionário j do dicionário i assim, resgastando os dados e gerando os códigos.
+    Função que gera códigos para os itens. Estes códigos são a forma de encontrar os objetos que estão no banco de dados. Foi passado tabela, pois será acessado o arquivo tabela, para acessar o
+    dicionário j do dicionário i assim, resgastando os objetos(produtos) e gerando os códigos.
     '''
 def atualizacao(tabela):
     '''
