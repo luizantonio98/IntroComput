@@ -78,7 +78,7 @@ def pos_venda(tabela):
 '''
 Função que permite atualizar a quantidade dos itens atuais do estoque.
 '''
-    return novatabela
+    return tabela
 
 
 def remove_item(tabela):
