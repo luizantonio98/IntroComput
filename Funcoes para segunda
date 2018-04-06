@@ -1,19 +1,19 @@
-#Função principal
-
 def main()
     '''
-     Função que inicializa o algoritmo.
+     Função que inicializa o algoritmo. Após inicializar, chama a função tela_inicial()
      '''
+    tela_inicial()
 
 # Bancos de dados
 
 def banco_itens():
     '''
-    Função que carrega os dados armazenados no dicionário de dicionários(Itens do estoque(códigos,descrições, etc)).
+    Função que carrega os dados armazenados no dicionário de dicionários [itens do estoque(códigos,descrições, etc)] através do módulo pickle).
     '''
-    return dados
-def Banco_adm():
-    '''Função que carrega os dados do gestor armazenados no dicionário de dicionários(chave,e-mail).
+    return tabela
+
+def banco_adm():
+    '''Função que carrega os dados do gestor armazenados no dicionário de dicionários(chave,e-mail) através do módulo pickle.
     '''
     return data
 
@@ -44,47 +44,47 @@ def menu():
     Função que mostra o menu principal.(Tela com as funções principais do programa).
 '''
 
-def pos_compra():
+def pos_compra(tabela):
     '''
     Função que permite inserir novos itens e/ou atualizar a quantidade dos itens atuais do estoque.
     '''
     return tabela #tabela são os dados disponibilizados pela função banco_itens
 
-def pos_venda():
+def pos_venda(tabela):
     '''
     Função que permite atualizar a quantidade dos itens atuais do estoque.
     '''
-    return tabela #tabela são os dados disponibilizados pela função banco_itens
-def lista_de_compras():
+    return novatabela
+
+def lista_de_compras(tabela):
     '''
 Função, que permite visualizar os itens do estoque e a partir dos valores inseridos pelo usuario, faz o cálculo de quais e quantos itens precisam ser comprados.
     '''
     
-def remove_item():
+def remove_item(tabela):
     '''
     Função que permite remover um item cadastrado no estoque.
+    '''
+    return tabela
+def perecivel_quinzena(tabela):
+    '''
+    Função que exibe os itens do estoque que falta 15 dias ou menos para vencer.
     '''
     
 
 #Funções auxiliares
 
-
-
-
-
-def menu():
-    print('1. Lista de compras')
-    print('2. Pos compras')
-    print('3. Pos vendas')
-    x= input('Digite a opção que vc deseja')
-    if x==1:
-        lista_de_compras()
-    elif x==2:
-        pos_vendas()
-
- def main():
-     '''
-    Primeira função a ser executada e que inicia o as funções do programa.
-    
+def escolha():
     '''
-     
+    Função que mostra mensagem se realmente tem certeza que quer salvar ou cancelar a operação"
+    '''
+def gera_codigos(tabela[i]):
+    '''
+    Função que gera códigos para os itens. Estes códigos são a forma de encontrar os objetos que estão no banco de dados. Foi passado tabela[i][j], pois será acessado o arquivo tabela, para acessar o
+    dicionário j do dicionário i assim, resgastando os dados e gerando os códigos.
+    '''
+def atualizacao(tabela):
+    '''
+    Após sofrer uma modificação no arquivo tabela.pkl, quando uma função precisar de atualizacao(), tabela.pkl será retornado atualizado.
+    '''
+    return tabela
