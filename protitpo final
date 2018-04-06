@@ -1,5 +1,6 @@
 #Função principal
 
+
 def main()
     '''
      Função que inicializa o algoritmo. Após inicializar, chama a função tela_inicial()
@@ -60,6 +61,7 @@ De acordo com a entrada do usuário, a função permite ou não acessar o progra
 '''
     return acesso
 
+
 def criar_senha():
 '''
 Função que cria a chave de acesso.
@@ -71,33 +73,32 @@ def pos_compra(tabela):
 '''
 Função que permite inserir novos itens e/ou atualizar a quantidade dos itens atuais do estoque.
 '''
-    return tabela
+    return atualizados
 
 
 def pos_venda(tabela):
 '''
 Função que permite atualizar a quantidade dos itens atuais do estoque.
 '''
-    return tabela
+    return atualizados
 
 
 def remove_item(tabela):
 '''
 Função que permite remover um item cadastrado no estoque.
 '''
-    return tabela
+    return atualizados
 
 
 
 #Funções auxiliares
 
-
-def gera_codigos(tabela[i]):
+def gera_codigos(tabela):
     '''
-    Função que gera códigos para os itens. Estes códigos são a forma de encontrar os objetos que estão no banco de dados. Foi passado tabela[i][j], pois será acessado o arquivo tabela, para acessar o
+    Função que gera códigos para os itens. Estes códigos são a forma de encontrar os objetos que estão no banco de dados. Foi passado tabela, pois será acessado o arquivo tabela, para acessar o
     dicionário j do dicionário i assim, resgastando os dados e gerando os códigos.
     '''
-def atualizacao(tabela):
+def atualizacao(atualizados):
     '''
     Após sofrer uma modificação no arquivo tabela.pkl, quando uma função precisar de atualizacao(), tabela.pkl será retornado atualizado.
     '''
