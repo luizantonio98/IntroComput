@@ -1,0 +1,129 @@
+def tela_primeiro_acesso():
+    print('Bem-vindo a Estoque Mix Petiscaria')
+    print('Como este é o seu primeiro acesso ao programa, você deverá criar'+
+          '\nsua chave de acesso, que possibiltará a sua entrada futuramente.'+
+          '\nAtenção! A chave nunca poderá ser modificada. Portanto tome bastante'+
+          '\ncuidado ao criá-la.')
+    criar_chave()
+    if chave!= confirmacao:
+        erro_criar_chave()
+    if chave==confirmacao:
+        print('As chaves são iguais. Se futuramente você esquecer sua chave de acesso,'+
+            '\n ela será enviada para seu email.')
+        inserir_email() #chamada de função
+        if email==confirm_email:
+            print('Chave de acesso criada e dados salvos com sucesso!')
+        elif email!=confirm_email:
+            erro_inserir_email() #chamada de função
+
+def inserir_email():
+    email= input('Digite seu email.')
+    confirm_email= input('Digite seu email novamente')
+    
+def erro_inserir_email():
+    print('O email e confirmação não são iguais, por favor tente novamente')
+    email= input('Digite seu email.')
+    confirm_email= input('Digite seu email novamente')
+    
+def criar_chave():
+    chave= input('Digite aqui a chave de acesso:')
+    confirmacao= input('Digite a confirmacao da chave de acesso:')
+
+def erro_criar_chave():
+    print('As chaves não conferem. Por favor, tente novamente.')
+    chave= input('Digite aqui a chave de acesso')
+    confirmacao= input('Digite a confirmacao da chave de acesso:')
+    
+              
+def tela_inicial():
+    print('Bem-vindo a Estoque Mix Petiscaria')
+    print('''[1]. Fazer login
+[2]. Recuperar Chave de acesso''')
+    lista= ['1','2']
+    opcao= input('Escolha uma opção: ')
+    if opcao not in lista:
+        escolha= erro_tela_inicial(lista)
+        if escolha=='1':
+            pass #Encaminhar para fazer login
+        elif escolha=='2':
+            pass #Encaminhar para recuperar chave de acesso
+    elif opcao== 1:
+        pass #Encaminhar para fazer login
+    elif opcao==2:
+        pass #Encaminhar para recuperar chave de acesso
+    
+def erro_tela_inicial(lista):
+    opcao=input('Escolha uma opção válida: ')
+    while opcao not in lista:
+        opcao=input('Escolha uma opção válida: ')
+    return opcao
+        
+def login(chave):#chave vai ser importada do banco de dados
+    senha= input('Digite sua chave de acesso:')
+    if senha==chave:
+        pass #chamar funcao menu principal
+    elif senha!=chave:
+        pass #chamar funcao de erro, tente novamente
+
+def recuperar_chave(argumento): #argumento vai ser o bloco de notas importado
+    print('Olá, para recuperar sua chave você precisa digitar seu email.')
+    email= input('Digite seu email:')
+    if  email==argumento:
+        pass #funcao email_enviado()
+
+def menu_principal():
+    lista= ['1','2','3','4','5']
+    print('*'*10+'MENU PRINCIPAL'+'*'*10)
+    print('''[1]. Atualizar Pós-compras
+[2]. Atualizar Pós-vendas
+[3]. Visualizar Lista de compras
+[4]. Visualizar itens próximos do vencimento
+[5]. Remover item cadastrado no estoque''')
+    entrada= input('Selecione uma opção:')
+    if entrada not in lista:
+        opcao= erro_menu(entrada,lista)
+    elif opcao=='1':
+        pass
+        #funcao 1
+    elif opcao=='2':
+        pass
+        #funcao 2
+    elif opcao=='3':
+        pass
+        #funcao 3
+    elif opcao=='4':
+        pass
+        #funcao 4
+    elif opcao=='5':
+        pass
+        #funcao 5
+
+def erro_menu(entrada,lista):
+    escolha= input('Erro. Selecione uma opção:')
+    while escolha not in lista:
+        escolha= input('Erro. Selecione uma opção:')
+    return escolha
+    
+
+def pos_compras(argumento):
+    print('*'*10+'ATUALIZAR PÓS-COMPRAS'+'*'*10)
+    print('''[1]. Adicionar um novo item
+[2]. Adicionar uma nova quantidade de itens''')
+    escolha= input('Selecione uma opção: ')
+    if  escolha=='1':
+        pass #chama adicionar item
+    elif escolha=='2':
+        pass #chama alterar quantidade
+    else:
+
+#FAZER ERRO_LOGIN()
+#CONTINUAR POS_COMPRAS()
+        
+        
+    
+    
+        
+
+    
+    
+          
