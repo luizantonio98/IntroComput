@@ -1,4 +1,4 @@
-def tela_primeiro_acesso():
+def tela_inicial_primeiro_acesso():
     print('Bem-vindo a Estoque Mix Petiscaria')
     print('Como este é o seu primeiro acesso ao programa, você deverá criar'+
           '\nsua chave de acesso, que possibiltará a sua entrada futuramente.'+
@@ -44,13 +44,13 @@ def tela_inicial():
     if opcao not in lista:
         escolha= erro_tela_inicial(lista)
         if escolha=='1':
-            pass #Encaminhar para fazer login
+             login(chave)
         elif escolha=='2':
-            pass #Encaminhar para recuperar chave de acesso
+            recuperar_chave(argumento)
     elif opcao== 1:
-        pass #Encaminhar para fazer login
+        login(chave)
     elif opcao==2:
-        pass #Encaminhar para recuperar chave de acesso
+        recuperar_chave(argumento)
     
 def erro_tela_inicial(lista):
     opcao=input('Escolha uma opção válida: ')
@@ -61,9 +61,17 @@ def erro_tela_inicial(lista):
 def login(chave):#chave vai ser importada do banco de dados
     senha= input('Digite sua chave de acesso:')
     if senha==chave:
-        pass #chamar funcao menu principal
+        menu_principal()
     elif senha!=chave:
-        pass #chamar funcao de erro, tente novamente
+        erro_login()
+
+def erro_login():
+    print('Você digitou incorretamente a chave de acesso, tente novamente.')
+    senha= input('Chave de acesso:')
+    if senha== chave':
+        menu_principal()
+    else:
+        erro_login()
 
 def recuperar_chave(argumento): #argumento vai ser o bloco de notas importado
     print('Olá, para recuperar sua chave você precisa digitar seu email.')
@@ -83,8 +91,7 @@ def menu_principal():
     if entrada not in lista:
         opcao= erro_menu(entrada,lista)
     elif opcao=='1':
-        pass
-        #funcao 1
+        atualizar_pos_compras()
     elif opcao=='2':
         pass
         #funcao 2
@@ -105,19 +112,82 @@ def erro_menu(entrada,lista):
     return escolha
     
 
-def pos_compras(argumento):
+def atualizar_pos_compras():
     print('*'*10+'ATUALIZAR PÓS-COMPRAS'+'*'*10)
     print('''[1]. Adicionar um novo item
 [2]. Adicionar uma nova quantidade de itens''')
     escolha= input('Selecione uma opção: ')
     if  escolha=='1':
-        pass #chama adicionar item
+        adicionar_item()
     elif escolha=='2':
-        pass #chama alterar quantidade
+        adicionar_quantidade()
     else:
+        erro_pos_compras(escolha)
+        
 
-#FAZER ERRO_LOGIN()
-#CONTINUAR POS_COMPRAS()
+def adicionar_item():
+    descricao= input('Digite o nome do item: ')
+    print("Digite 'sim' ou 'nao' para: ")
+    pergunta1= input('É frágil? ')
+    pergunta2= input('É perecivel? ')
+    pergunta3= input('Validade? ')
+    print('Natural(0), Gelado(1), Congelado(2)')
+    alimatacao= int(input('Informe a aclimatação: '))
+
+def adicionar_quantidade():
+    print('Digite o código do item e quantidade que você deseja adicionar')
+    #mostra os itens atuais
+    codigo= int(input('Código do item: '))
+    quantidade= int(input('Quantidade: '))
+    codigostr= str(codigo)
+    quantidadestr= str(quantidade)
+    decisao=input('Você tem certeza que deseja adicionar '+quantidadestr+' unidades de '+codigostr+'?').upper()
+    decisoes(decisao)
+
+def erro_pos_compras(escolha):
+    escolha= input('Opção não encontrada. Digite [1]. Adicionar um novo item ou [2]. Adicionar uma nova quantidade de itens')
+    if escolha=='1':
+        adicionar_item()
+    elif escolha=='2':
+         adicionar_quantidade()
+    else:
+        while escolha!='1' and escolha!='2':
+            erro_pos_compras(escolha)
+        
+def decisoes(decisao):
+    lista=['S','N','SIM','NAO','NÃO']
+    if decisao=='S' or decisao=='SIM':
+        novo_item=input('Alterações salvas com sucesso! Deseja adicionar um novo item?').upper()
+        item(novo_item)
+        
+    elif decisao=='N' or decisao=='NAO' or decisao=='NÃO':
+         print('Operação cancelada!')
+         adicionar_quantidade()
+    else:
+        decisao= input("Opção não encontrada. Digite 's' para sim ou 'n' para não: ").upper()
+        while decisao not in lista:
+            decisao= input("Opção não encontrada. Digite 's' para sim ou 'n' para não: ").upper()
+        decisoes(decisao)
+
+def item(novo_item):
+    if novo_item=='S' or novo_item=='SIM':
+        adicionar_quantidade()
+    elif novo_item=='N' or novo_item=='NAO' or novo_item=='NÃO':
+        pos_compras()
+
+    else:
+        while novo_item not in lista:
+            novo_item= input("Opção não encontrada. Digite 's' para sim ou 'n' para não: ").upper()
+        item(novo_item)
+
+
+
+
+
+
+
+
+#FAZER POS VENDAS E DEMAIS
         
         
     
