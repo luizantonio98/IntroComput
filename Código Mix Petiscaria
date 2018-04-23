@@ -1,3 +1,16 @@
+import pickle
+
+def criando_banco_dados():
+    dados={}
+    entradabanco= open('testando.pickle','wb')
+    pickle.dump(dados, entradabanco)
+    entradabanco.close()
+    
+def carregando_banco_dados():
+    entrada= open('testando.pickle','rb')
+    dados= pickle.load(entrada)
+
+
 def tela_inicial_primeiro_acesso():
     print('Bem-vindo a Estoque Mix Petiscaria')
     print('Como este é o seu primeiro acesso ao programa, você deverá criar'+
@@ -36,7 +49,7 @@ def erro_criar_chave():
     
               
 def tela_inicial():
-    print('Bem-vindo a Estoque Mix Petiscaria')
+    print('Bem-vindo ao Estoque Mix Petiscaria')
     print('''[1]. Fazer login
 [2]. Recuperar Chave de acesso''')
     lista= ['1','2']
@@ -188,12 +201,3 @@ def item(novo_item):
 
 
 #FAZER POS VENDAS E DEMAIS
-        
-        
-    
-    
-        
-
-    
-    
-          
