@@ -1,0 +1,20 @@
+TESTAR NO PYTHON TUTOR
+
+dados={}
+dados['produtos']={}
+dados['produtos']['001']={}
+dados['produtos']['002']={}
+dados['produtos']['003']={}
+dados['produtos']['001']['Descrição']='Coca-Cola'
+dados['produtos']['001']['Validade']='25/12/1995'
+dados['produtos']['001']['Quantidade']=15
+dados['produtos']['002']['Descrição']='Camarão'
+dados['produtos']['002']['Validade']='---'
+dados['produtos']['002']['Quantidade']=5
+dados['produtos']['003']['Descrição']='Feijão Turquesa'
+dados['produtos']['003']['Validade']='21/04/2021'
+dados['produtos']['003']['Quantidade']=26
+dados['adm']={}
+dados['adm']['nome']= 'Hector'
+dados['adm']['senha']= 123
+
