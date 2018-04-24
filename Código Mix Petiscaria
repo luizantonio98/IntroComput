@@ -143,9 +143,10 @@ def adicionar_item():
     print("Digite 'sim' ou 'nao' para: ")
     pergunta1= input('É frágil? ')
     pergunta2= input('É perecivel? ')
-    pergunta3= input('Validade? ')
+    validade= input('Validade? ')
     print('Natural(0), Gelado(1), Congelado(2)')
     alimatacao= int(input('Informe a aclimatação: '))
+    #editar para nao permitir entrada inválida
 
 def adicionar_quantidade():
     print('Digite o código do item e quantidade que você deseja adicionar')
@@ -154,11 +155,13 @@ def adicionar_quantidade():
     quantidade= int(input('Quantidade: '))
     codigostr= str(codigo)
     quantidadestr= str(quantidade)
-    decisao=input('Você tem certeza que deseja adicionar '+quantidadestr+' unidades de '+codigostr+'?').upper()
+        decisao=input('Você tem certeza que deseja adicionar '+quantidadestr+
+                      '\nunidades de '+codigostr+'?').upper()
     decisoes(decisao)
 
 def erro_pos_compras(escolha):
-    escolha= input('Opção não encontrada. Digite [1]. Adicionar um novo item ou [2]. Adicionar uma nova quantidade de itens')
+    escolha= input('Opção não encontrada. Digite [1]. Adicionar um novo item ou'+
+    '\n[2]. Adicionar uma nova quantidade de itens')
     if escolha=='1':
         adicionar_item()
     elif escolha=='2':
