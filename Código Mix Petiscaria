@@ -37,7 +37,8 @@ def erro_inserir_email():
     print('O email e confirmação não são iguais, por favor tente novamente')
     email= input('Digite seu email.')
     confirm_email= input('Digite seu email novamente')
-    
+
+
 def criar_chave():
     chave= input('Digite aqui a chave de acesso:')
     confirmacao= input('Digite a confirmacao da chave de acesso:')
@@ -106,17 +107,14 @@ def menu_principal():
     elif opcao=='1':
         atualizar_pos_compras()
     elif opcao=='2':
-        pass
-        #funcao 2
+        pos_vendas()
     elif opcao=='3':
-        pass
-        #funcao 3
+        lista_de_compras()
     elif opcao=='4':
-        pass
-        #funcao 4
+        vencimento()
     elif opcao=='5':
         pass
-        #funcao 5
+        #funcao remover_item()
 
 def erro_menu(entrada,lista):
     escolha= input('Erro. Selecione uma opção:')
@@ -136,9 +134,10 @@ def atualizar_pos_compras():
         adicionar_quantidade()
     else:
         erro_pos_compras(escolha)
+   
         
 
-def adicionar_item():
+def adicionar_item( ):
     descricao= input('Digite o nome do item: ')
     print("Digite 'sim' ou 'nao' para: ")
     pergunta1= input('É frágil? ')
@@ -196,6 +195,83 @@ def item(novo_item):
             novo_item= input("Opção não encontrada. Digite 's' para sim ou 'n' para não: ").upper()
         item(novo_item)
 
+def pos_vendas():
+'''Levando em consideração que o estoque é um dicionario de listas. Caso a entrada de quantidade dos itens dos lotes que 
+possuem vencimento mais próxima seja excedida, remover quantidade do lote posterior
+eestoque = {'111000': [['arroz','2018-04-25',7],['arroz','2018-05-15',8],['arroz','2018-04-23',9]],'111001':[['feijão', '2018-04-03', 10]]}
+'''
+    cod = input('digite o código do produto que deseja atualizar no estoque:')
+    if cod in estoque:
+        quant = int(input('Digite a quantidade a ser removida:'))
+        if len(estoque[cod]) >1:
+            menor_data = estoque[cod][0][1]
+            for k in estoque[cod]:
+                #menor data
+                if k[1][0:4] <= menor_data[0:4]:
+                    if k[1][5:7] < menor_data[5:7]:
+                        menor_data = k[1]
+                    elif k[1][5:7] == menor_data[5:7]:
+                        if k[1][-2:] < menor_data[-2:]:
+                            menor_data = k[1]
+            for k in estoque[cod]:
+                if k[1] == menor_data:
+                    quant_atual = k[2] - quant
+                    k[2] = quant_atual
+        else:
+            quant_atual = estoque[cod][0][2] - quant
+            estoque[cod][0][2] = quant_atual
+
+def vencimento():
+'''Levando em consideração que o estoque é um dicionario de listas
+estoque = {'111000': [['arroz','2018-04-25',7],['arroz','2018-05-15',8],['arroz','2018-04-23',9]],'111001':[['feijão', '2018-04-03', 10]]}
+'''
+    from datetime import date
+    hoje = date.today()
+    hoje.toordinal()
+    futuro = str(date.fromordinal(hoje.toordinal()+15))
+    print(10*'-','PRODUTOS QUE IRÃO VENCER NOS PRÓXIMOS 15 DIAS',10*'-')
+    print('CÓDIGO','%6s'%'NOME','%12s'%'VALIDADE' ,'%7s'%'QUANT')
+    for i in estoque:
+        if len(estoque[i])>1:
+            for k in estoque[i]:
+                ano = k[1][0:4]
+                mes = k[1][5:7]
+                dia = k[1][-2:]
+                #comparando
+                if futuro[0:4] == ano:
+                    if mes < futuro[5:7]:
+                        print(i,'|',k[0],'|',k[1],'|', k[2])
+                    elif mes == futuro[5:7]:
+                        if dia < futuro[-2:]:
+                            print(i,'|',k[0],'|',k[1],'|', k[2])
+         else:
+            data = estoque[i][0][1]
+            ano = data[0:4]
+            mes = data[5:7]
+            dia = data[-2:]
+            #comparando
+            if futuro[0:4] == ano:
+                if mes < futuro[5:7]:
+                    print(i,'|',estoque[i][0][0],'|',estoque[i][0][1],'|', estoque[i][0][2])
+                elif mes == futuro[5:7]:
+                    if dia < futuro[-2:]:
+                        print(i,'|',estoque[i][0][0],'|',estoque[i][0][1],'|', estoque[i][0][2])
+ 
+ def lista_de_compras():
+ #Calcular a diferença, para criar a lista de compras
+    print(10*'-','ESTOQUE AUTAL',10*'-')
+    print('CÓDIGO','%6s'%'NOME','%12s'%'VALIDADE' ,'%7s'%'QUANT')
+    for i in sorted(estoque):
+        if len(estoque[i]) >1:
+            for k in estoque[i]:
+                print(i,'|',k[0],'|',k[1],'|', k[2])
+        else:
+            print(i,'|',k[0],'|',k[1],'|', k[2])
+
+    
+    
+    
+#Atualizar funções feitas e criar remover_item()
 
 
 
@@ -203,4 +279,4 @@ def item(novo_item):
 
 
 
-#FAZER POS VENDAS E DEMAIS
+
