@@ -68,13 +68,13 @@ def login():
     #menu_principal()
 def recuperar_senha():
     print('Aguarde um momento...')
-    enviador='mixpetiscaria2018@gmail.com'
+    remetente='mixpetiscaria2018@gmail.com'
     destinatario= objetos['email']
     mensagem = objetos['chave']
     email = smtplib.SMTP('smtp.gmail.com:587')
     email.starttls()
     email.login('mixpetiscaria2018@gmail.com','petiscariadohector')
-    email.sendmail('mixpetiscaria2018@gmail.com',destinatario,mensagem)
+    email.sendmail(remetente,destinatario,mensagem)
     email.quit()
     time.sleep(2)
     print('Email enviado!')
