@@ -1,0 +1,106 @@
+import pickle
+import time
+import smtplib
+
+
+        
+def tela_inicial_primeiro_acesso():
+    '''Enquanto o usuário não tenha uma chave de acesso, essa função será executada.
+    Esta função tem o papel de criar chave de acesso e guardar dados para uma futura
+    recuperação de chave.
+    '''
+    time.sleep(1)
+    print('Bem-vindo a Estoque Mix Petiscaria')
+    print('Como este é o seu primeiro acesso ao programa, você deverá criar'+
+          '\nsua chave de acesso, que possibiltará a sua entrada futuramente.'+
+          '\nAtenção! A chave nunca poderá ser modificada. Portanto tome bastante'+
+          '\ncuidado ao criá-la.')
+    chave= input('Digite aqui a chave de acesso: ')
+    confirmacao= input('Digite a confirmacao da chave de acesso: ')
+    while chave!=confirmacao:
+        time.sleep(0.5)
+        print('As chaves não conferem. Por favor, tente novamente.')
+        chave= input('Digite aqui a chave de acesso: ')
+        confirmacao= input('Digite a confirmacao da chave de acesso: ')
+    print('As chaves são iguais. Se futuramente você esquecer sua chave de acesso,'+
+            '\nela será enviada para seu email.')
+    email= input('Digite seu email: ')
+    confirm_email= input('Digite seu email novamente: ')
+    while email!=confirm_email:
+        time.sleep(0.5)
+        print('O email e confirmação não são iguais, por favor tente novamente.')
+        email= input('Digite seu email.')
+        confirm_email= input('Digite seu email novamente')
+        print('Os emails conferem. Sua chave de acesso foi criada!')
+    objetos['email']=email
+    objetos['chave']=chave
+    carregamento = open('estoquemix.pickle', 'wb')
+    pickle.dump(objetos,carregamento)
+    carregamento.close()
+    print('Bem-vindo ao menu')
+
+def tela_inicial():
+    '''Já que o usuário possui uma chave de acesso, essa será a nova tela inicial do programa.
+    '''
+    print('Bem-vindo ao Estoque Mix Petiscaria')
+    time.sleep(1)
+    print('''[1]. Fazer login    [2]. Recuperar Chave de acesso''')
+    lista= ['1','2']
+    opcao= input('Escolha uma opção: ')
+    print()
+    while opcao not in lista:
+        time.sleep(0.5)
+        print('Opção não existe. Por favor tente novamente.')
+        opcao= input('Escolha uma opção: ')
+        print()
+    if opcao=='1':
+        login()
+    elif opcao=='2':
+        recuperar_senha()
+def login():
+    senha= input('Digite sua chave de acesso: ')
+    print()
+    while senha!=objetos['chave']:
+        print('Chave de acesso incorreta. Tente novamente')
+        senha= input('Digite sua chave de acesso: ')
+    time.sleep(1)
+    print('Bem-vindo ao menu principal')
+    #menu_principal()
+def recuperar_senha():
+    print('Aguarde um momento...')
+    enviador='mixpetiscaria2018@gmail.com'
+    destinatario= objetos['email']
+    mensagem = objetos['chave']
+    email = smtplib.SMTP('smtp.gmail.com:587')
+    email.starttls()
+    email.login('mixpetiscaria2018@gmail.com','petiscariadohector')
+    email.sendmail('mixpetiscaria2018@gmail.com',destinatario,mensagem)
+    email.quit()
+    time.sleep(2)
+    print('Email enviado!')
+
+    
+
+#main
+'''
+Função que identifica se existe um banco de dados criado. Se não tem, cria.
+Se já tem, carrega.
+'''
+try:
+    carregamento = open('estoquemix.pickle', 'rb')
+    objetos= pickle.load(carregamento)
+    carregamento.close()
+except:
+    objetos= {'produtos':{},'chave':123,'email':''}
+    carregamento = open('estoquemix.pickle', 'wb')
+    pickle.dump(objetos,carregamento)
+    carregamento.close()
+if objetos['chave']==123:
+    tela_inicial_primeiro_acesso()
+else:
+    tela_inicial()
+    
+    
+    
+        
+
